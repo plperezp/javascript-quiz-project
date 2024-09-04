@@ -30,7 +30,7 @@ class Quiz {
 
   // 5. checkAnswer(answer)  FALTA LA LOGICA DE ANSWER
   checkAnswer(answer) {
-    if (answer) {
+    if (answer === this.questions[this.currentQuestionIndex].answer) {
       this.correctAnswers++;
     }
   }
