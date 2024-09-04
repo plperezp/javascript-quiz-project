@@ -15,4 +15,6 @@ class Question {
             this.choices[indiceAleatorio] = temporal;
         } 
     }
+
+
 }
