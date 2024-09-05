@@ -1,3 +1,7 @@
+@font-face{
+    font-family: "Friend";
+    src: url(../asset/font/Howdy\ Friend.otf);
+}
 /* CSS Reset */
 * {
     margin: 0;
@@ -7,7 +11,9 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f4;
+    /* background-color: #f4f4f4; */
+    background-image: url(https://png.pngtree.com/background/20210716/original/pngtree-neon-background-for-music-party-picture-image_1335420.jpg);
+    background-size: cover;
     color: #333;
     line-height: 1.6;
     padding: 20px;
@@ -18,12 +24,29 @@ header {
 }
 
 .container {
-    height: 540px;
+    font-family: "Friend";
+    height: 620px;
     max-width: 600px;
     margin: auto;
     padding: 20px;
-    background: #fff;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    background: #cccccc;
+    /* box-shadow: 0 5px 15px rgba(0,0,0,0.1); */
+    border: 2px solid #4cae4c;
+    box-shadow: 0px 0px 50px #4cae4c;
+    border-radius: 20px;
+    margin-top: 50px;
+}
+
+
+.container > header {
+    display: flex;
+    justify-content: center;
+    font-size: 1.8rem;
+    background: linear-gradient(90deg, rgb(91, 91, 195), blue, indigo);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: rainbow 5s linear infinite;
 }
 
 #quizView, #endView {

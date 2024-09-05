@@ -28,7 +28,7 @@ class Quiz {
     }
   }
 
-  // 5. checkAnswer(answer)  FALTA LA LOGICA DE ANSWER
+  // 5. checkAnswer(answer)  
   checkAnswer(answer) {
     if (answer === this.questions[this.currentQuestionIndex].answer) {
       this.correctAnswers++;
@@ -63,7 +63,6 @@ class Quiz {
     this.questions = filteredQuestion;
     return filteredQuestion;
 
-   
   }
 
   averageDifficulty(){
