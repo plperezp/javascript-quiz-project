@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // View divs
   const quizView = document.querySelector("#quizView");
   const endView = document.querySelector("#endView");
-  const titleNode = document.querySelector(".container header h1")
+  const titleNode = document.querySelector(".container header h1");
 
   // Quiz view elements
   const progressBar = document.querySelector("#progressBar");
@@ -25,25 +25,68 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Array with the quiz questions
   const questions = [
-    
     new Question(
       "¿En que año fue 1 +1?",
-      ["God Age","El primer dia que entendí DOM", "La respuesta es: El fantastico Ralph", "Mi no saber"],
+      [
+        "God Age",
+        "El primer dia que entendí DOM",
+        "La respuesta es: El fantastico Ralph",
+        "Mi no saber",
+      ],
       "La respuesta es: El fantastico Ralph",
       3
     ),
-    new Question("En que año se fundó Netflix",["1997", "2001", "2009", "2015"], "1997",1),
-    new Question("¿A quién madruga?", ["Llegar pronto le ayuda", "Dios le ayuda", "Menos años dura", "Le amanece mas temprano"], "Dios le ayuda", 1),
-    new Question("¿Cuántos signos astrológicos componen el zodíaco?", ["8", "10", "12", "14"], "12", 1),
-    new Question("¿Cual es la iconica frase de Emma Penella en la sitcom 'La que se avecina?' ", ["Vayase señor Cuesta, vayase", "Dios mio, que follon", "Punto en boca, hombre ya", "Junta urgente"], "Vayase señor Cuesta, vayase", 1),
-    new Question("¿Qué es el DOM?", ["El jefe de la mafia", "Es la representación del HTML que acepta cambios de manera temporal y local", "Un videojuego", "Es el enlace a una web"], "Es la representación del HTML que acepta cambios de manera temporal y local", 1),
-    new Question("¿Que metodo podemos utilizar tanto en arrays como en los nodos?", [".map()", ".reverse()", ".forEach()", ".sort()"], ".forEach()", 1),
-    
-
-
-
-
-
+    new Question(
+      "En que año se fundó Netflix",
+      ["1997", "2001", "2009", "2015"],
+      "1997",
+      1
+    ),
+    new Question(
+      "¿A quién madruga?",
+      [
+        "Llegar pronto le ayuda",
+        "Dios le ayuda",
+        "Menos años dura",
+        "Le amanece mas temprano",
+      ],
+      "Dios le ayuda",
+      1
+    ),
+    new Question(
+      "¿Cuántos signos astrológicos componen el zodíaco?",
+      ["8", "10", "12", "14"],
+      "12",
+      1
+    ),
+    new Question(
+      "¿Cual es la iconica frase de Emma Penella en la sitcom 'La que se avecina?' ",
+      [
+        "Vayase señor Cuesta, vayase",
+        "Dios mio, que follon",
+        "Punto en boca, hombre ya",
+        "Junta urgente",
+      ],
+      "Vayase señor Cuesta, vayase",
+      1
+    ),
+    new Question(
+      "¿Qué es el DOM?",
+      [
+        "El jefe de la mafia",
+        "Es la representación del HTML que acepta cambios de manera temporal y local",
+        "Un videojuego",
+        "Es el enlace a una web",
+      ],
+      "Es la representación del HTML que acepta cambios de manera temporal y local",
+      1
+    ),
+    new Question(
+      "¿Que metodo podemos utilizar tanto en arrays como en los nodos?",
+      [".map()", ".reverse()", ".forEach()", ".sort()"],
+      ".forEach()",
+      1
+    ),
 
     // Add more questions here
   ];
@@ -77,14 +120,15 @@ document.addEventListener("DOMContentLoaded", () => {
   let timerId = setInterval(() => {
     quiz.timeRemaining--;
     const minutes = Math.floor(quiz.timeRemaining / 60)
-    .toString()
-    .padStart(2, "0");
-   const seconds = (quiz.timeRemaining % 60).toString().padStart(2, "0");
-  timeRemainingContainer.innerText = `${minutes}:${seconds}`;
+      .toString()
+      .padStart(2, "0");
+    const seconds = (quiz.timeRemaining % 60).toString().padStart(2, "0");
+    timeRemainingContainer.innerText = `${minutes}:${seconds}`;
 
     //console.log(quiz.timeRemaining)
     if (quiz.timeRemaining === 0) {
       clearInterval(timerId);
+      showResults();
     }
   }, 1000);
 
@@ -96,11 +140,6 @@ document.addEventListener("DOMContentLoaded", () => {
     location.reload();
   });
 
-  
-    
-  
-
- 
   /************  FUNCTIONS  ************/
 
   // showQuestion() - Displays the current question and its choices
@@ -220,7 +259,4 @@ document.addEventListener("DOMContentLoaded", () => {
     // 3. Update the result container (div#result) inner text to show the number of correct answers out of total questions
     resultContainer.innerText = `You scored ${quiz.correctAnswers} out of ${quiz.questions.length} correct answers!`; // This value is hardcoded as a placeholder
   }
- 
-
-
 });
